@@ -39,3 +39,5 @@ pnpm-lock.yaml
 .npmrc
 
 docker-compose.yml
+.next
+.vscode
