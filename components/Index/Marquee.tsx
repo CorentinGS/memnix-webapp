@@ -26,14 +26,15 @@ export default function Marquee() {
     const ROWS = 3
     const TAGS_PER_ROW = 7
 
-    const random = (min, max) => Math.floor(Math.random() * (max - min)) + min
-    const shuffle = (arr) => [...arr].sort(() => 0.5 - Math.random())
+    const random = (min: number, max: number) => Math.floor(Math.random() * (max - min)) + min
+    const shuffle = (arr: string[]) => [...arr].sort(() => 0.5 - Math.random())
 
     // @ts-ignore
     const InfiniteLoopSlider = ({children, duration, reverse = false}) => {
         return (
             <div
                 style={{
+                    // @ts-ignore
                     "--duration": `${duration}ms`,
                     "--direction": reverse ? "reverse" : "normal"
                 }}
@@ -53,7 +54,7 @@ export default function Marquee() {
         )
     }
 
-    const Tag = ({text}) => (
+    const Tag = ({text}: { text: string }) => (
         <div className="mr-4 flex items-center gap-y-1 rounded-md bg-base-200/80 p-4 text-sm drop-shadow-md">
             <span>#</span> {text}
         </div>
@@ -67,7 +68,7 @@ export default function Marquee() {
                     <InfiniteLoopSlider
                         key={i}
                         duration={random(DURATION - 5000, DURATION + 5000)}
-                        reverse={i % 2}
+                        reverse={i % 2 === 0}
                     >
                         {shuffle(TAGS)
                             .slice(0, TAGS_PER_ROW)

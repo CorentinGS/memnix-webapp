@@ -27,7 +27,6 @@ export default function LocaleSwitcher() {
 
 
     useEffect(() => {
-        console.log('selected', selected);
         router.push(selected);
 
     }, [selected]);
