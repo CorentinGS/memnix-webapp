@@ -4,6 +4,8 @@ import LogoImg from "@img/icon.png";
 
 import dynamic from "next/dynamic";
 import { useTranslations } from "next-intl";
+import Header from "@components/Global/Header";
+import React from "react";
 
 const Discover = dynamic(() => import("@/components/Index/Discover"));
 const Marquee = dynamic(() => import("@/components/Index/Marquee"));
@@ -14,6 +16,8 @@ export default function Home() {
 
   return (
     <main>
+      <Header />
+
       <section className="max-w-6xl mx-auto px-4 sm:px-6 md:flex md:h-screen 2xl:h-auto pt-[72px] md:min-h-[calc(100vh-72px)]">
         <div className="py-12 md:py-12 lg:py-16 block md:flex text-center md:text-left">
           <div className="pb-12 md:pb-0 md:py-0 mx-auto md:pr-16 flex items-center basis-3/5">

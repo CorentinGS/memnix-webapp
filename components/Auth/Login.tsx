@@ -1,14 +1,33 @@
 "use client";
 
-import React from "react";
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { baseUrl } from "@/common/utils/utils";
 import { ENDPOINTS } from "@/common/utils/endpoints";
 import Link from "next/link";
+import { login } from "@/common/utils/security";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
   const t = useTranslations("Common");
 
+  const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const onLoginHandler = async () => {
+    console.log("login");
+    await login(email, password)
+      .then((data) => {
+        console.log(data);
+        if (data) {
+          router.push("/callback?jwt=" + data.token);
+        }
+      })
+      .catch((err) => {
+        // TODO: Handle error
+        console.log(err);
+      });
+  };
   return (
     <>
       <div className="flex flex-col gap-4 p-4 md:p-8">
@@ -18,8 +37,10 @@ export default function Login() {
           </label>
           <input
             type="text"
-            placeholder="Enter your username"
+            placeholder="Enter your email"
             className="input-bordered input w-full px-3 py-2 transition duration-100"
+            onChange={(ev) => setEmail(ev.currentTarget.value)}
+            value={email}
           />
         </div>
 
@@ -31,10 +52,15 @@ export default function Login() {
             type="password"
             placeholder="Enter your password"
             className="input-bordered input w-full px-3 py-2 transition duration-100"
+            onChange={(ev) => setPassword(ev.currentTarget.value)}
+            value={password}
           />
         </div>
 
-        <button className="btn-primary btn px-8 py-3 transition duration-100">
+        <button
+          className="btn-primary btn px-8 py-3 transition duration-100"
+          onClick={onLoginHandler}
+        >
           {t("auth.login")}
         </button>
 

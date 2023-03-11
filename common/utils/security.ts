@@ -16,7 +16,6 @@ export async function login(email: string, password: string) {
 
 export async function isConnected(token: string) {
   const res = await getWithToken(ENDPOINTS.Users.me, token);
-  console.log(res);
   return res.ok;
 }
 

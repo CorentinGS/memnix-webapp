@@ -7,18 +7,17 @@ import { useRouter } from "next/navigation";
 
 export default function CallbackJWT({ searchParams }: { searchParams: any }) {
   const t = useTranslations("Common");
-
   const router = useRouter();
   useEffect(() => {
     // you are safe to use the 'document' object here
     if (searchParams.jwt) {
       document.cookie = `jwt=${searchParams.jwt}; path=/;`;
     }
-    router.push("/");
+    router.push("/dashboard");
   }, []);
   return (
     <>
-      <div className="w-full h-[80vh] flex flex-col items-center justify-between">
+      <div className="w-full h-screen flex flex-col items-center justify-between">
         <div className="xl:w-1/2 flex-1 flex flex-col items-center justify-center text-center px-4 lg:px-0">
           <p className="text-4xl font-bold capitalize tracking-wide mt-8">
             Logging you in !

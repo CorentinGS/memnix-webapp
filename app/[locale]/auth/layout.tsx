@@ -2,6 +2,8 @@ import "@/app/global.css";
 
 import { NextIntlClientProvider, useLocale } from "next-intl";
 import { notFound } from "next/navigation";
+import Header from "@components/Global/Header";
+import React from "react";
 
 export const metadata = {
   title: "Create Next App",
@@ -24,12 +26,15 @@ export default async function AuthLayout({
   const messages = (await import(`../../../messages/${locale}.json`)).default;
 
   return (
-    <section className="py-6 sm:py-8 lg:py-12">
-      <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
-        </NextIntlClientProvider>
-      </div>
-    </section>
+    <>
+      <Header />
+      <section className="py-6 sm:py-8 lg:py-12">
+        <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            {children}
+          </NextIntlClientProvider>
+        </div>
+      </section>
+    </>
   );
 }

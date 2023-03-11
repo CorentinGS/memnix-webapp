@@ -24,10 +24,7 @@ export default function RootLayout({
   }
   return (
     <html lang={locale}>
-      <body>
-        <Header />
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
