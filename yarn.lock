@@ -688,10 +688,10 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@kevinmarrec/nuxt-pwa@^0.16.0":
-  version "0.16.2"
-  resolved "https://registry.yarnpkg.com/@kevinmarrec/nuxt-pwa/-/nuxt-pwa-0.16.2.tgz#512caadbea8236963c71664f24bdc860cac409b3"
-  integrity sha512-KRQtJ9hrIDogG7OrofmyOG+dM/vERF6KQGeI5IvINeZmmQxoO27IWO8D/ues10Ed/qYzjs6vj0vASsbJq0IY7A==
+"@kevinmarrec/nuxt-pwa@^0.17.0":
+  version "0.17.0"
+  resolved "https://registry.yarnpkg.com/@kevinmarrec/nuxt-pwa/-/nuxt-pwa-0.17.0.tgz#384a7d63062b5b71a2c14cc53d0b8c4b449d7399"
+  integrity sha512-TI/0Fe30g6/VL2Y2jDLF/q5sov8UBE5K4/+CRPUnJbQPCXhCzTBM8EjllDUwslZ3bPtCk2TqwDFZOHaKtY/eoA==
   dependencies:
     hasha "^5.2.2"
     sharp "^0.31.3"
@@ -5469,10 +5469,10 @@ sass-loader@13.2.0:
     klona "^2.0.4"
     neo-async "^2.6.2"
 
-sass@1.58.3:
-  version "1.58.3"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.58.3.tgz#2348cc052061ba4f00243a208b09c40e031f270d"
-  integrity sha512-Q7RaEtYf6BflYrQ+buPudKR26/lH+10EmO9bBqbmPh/KeLqv8bjpTNqxe71ocONqXq+jYiCbpPUmQMS+JJPk4A==
+sass@1.59.2:
+  version "1.59.2"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.59.2.tgz#537f6d11614d4f20f97696f23ad358ee398b1937"
+  integrity sha512-jJyO6SmbzkJexF8MUorHx5tAilcgabioYxT/BHbY4+OvoqmbHxsYlrjZ8Adhqcgl6Zqwie0TgMXLCAmPFxXOuw==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
     immutable "^4.0.0"
