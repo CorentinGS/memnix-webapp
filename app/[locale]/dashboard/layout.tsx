@@ -7,6 +7,10 @@ import React from "react";
 import {cookies} from "next/headers";
 import {isConnected} from "@/common/utils/security";
 
+export const metadata = {
+    title: "Dashboard",
+};
+
 export default async function DashboardLayout({
                                                   // @ts-ignore
                                                   children,
