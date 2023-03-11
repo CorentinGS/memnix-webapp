@@ -10,7 +10,9 @@
       "password": "Password",
       "login": "Login",
       "forgot_password": "Forgot password?",
-      "register": "Register"
+      "register": "Register",
+      "no_account": "Don't have an account?",
+      "have_account": "Already have an account?"
     }
   },
   "Discover": {
